@@ -1,0 +1,358 @@
+@-webkit-keyframes animatedBackground {
+	from {
+		background-position: 0 0;
+	}
+	to { 
+		background-position: 100% 0;
+	}
+}
+@-moz-keyframes animatedBackground {
+	from {
+		background-position: 0 0;
+	}
+	to { 
+		background-position: 100% 0;
+	}
+}
+@-webkit-keyframes typing { /*example from Lea Verou*/
+    from { width: 0 }
+    to { width:3.5em }
+}
+
+@-moz-keyframes typing {
+    from { width: 0 }
+    to { width:3.9em }
+}
+@-webkit-keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black }
+}
+
+@-moz-keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black }
+}
+.backgroundspace {
+	width: 100%; 
+	height: 800px; 
+	background-image: url("../images/space3.jpg");
+	background-position: 0px 0px;
+	background-repeat: repeat-x;
+	transition:1s;
+/*	animation: animatedBackground 40s linear infinite;
+    position: absolute;
+    left: 0;
+    right: -3840px;
+    top: 0;
+    bottom: 0;
+	background: url("../images/stars2.png") 0% 0% repeat;
+    z-index: -1;
+    width: 100%;
+    height: 50em;
+    overflow: hidden;*/
+
+    -webkit-animation-name: animatedBackground;
+	-webkit-animation-duration: 50s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+}
+.about .backgroundspace {
+	height: 300px;
+}
+header {
+	overflow: hidden;
+	position: relative;
+}
+body {
+/*	background-image: url("../images/hexagon2.svg");
+	background-size: 50px ;
+	background-color: #746D6D;	*/
+	margin: 0;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	max-width: 2560px;
+}
+body>section {
+	
+}
+header h1, h2{
+	font-family: "Helvetica Neue" ,Helvetica,Ariel,sans-serif;
+	font-weight: normal;
+	font-size: 2.6em;
+}
+header section {
+	position: absolute;
+	
+	left: 45%;
+	top: 40%;
+}
+header h1 {
+	
+	color: rgb(255,255,255);
+	
+	font-family: 'Montserrat', sans-serif;
+	font-size: 4em;
+	margin:0 auto;
+	margin-left: -3.6em;
+	text-transform: uppercase;
+
+}
+
+ header section h2 {
+	
+	display: block;
+	
+	font-size: 2.5em;
+	margin-top: 0;
+	margin-left: 2.2em;
+	
+	color: rgb(100, 51, 51);
+
+
+}
+section header,footer header {
+	background-image: url("../images/hexagon2.svg");
+	background-position: 0% 15%;
+	background-size: 8em ;
+	background-color: rgb(28, 65, 123);
+}
+section header h2,footer h2{
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	color: rgb(255,255,255);
+	
+	margin: 0 auto;
+	padding: 1em;
+
+}
+
+.skills {
+	background-color: #2b3339;
+	max-height: 1000px;
+    transition: max-height 1s ease-in;
+	
+}
+
+.skills section {
+	position: relative;
+}
+.skills section p {
+	position: absolute;
+	font-size: 2em;
+	left: 50%;
+	top:51%;
+	margin-top: -0.75em;	
+
+}
+.skills section p:nth-of-type(1) {
+	margin-left: -43.5px;
+}
+.skills section p:nth-of-type(2) {
+	margin-left: -32.89px;
+}
+.skills section p:nth-of-type(3) {
+	margin-left: -72.02px;
+}
+.skills section p:nth-of-type(4) {
+	margin-left: -54.25px;
+}
+.skills section p:nth-of-type(5) {
+	margin-left: -49.797px;
+}
+.skills section p:nth-of-type(6) {
+	margin-left: -32.8985px;
+}
+.skillhexagon {
+	position: relative;
+	top: 20%;
+	width: 20%;
+	min-width: 15em;
+	margin: 0em auto;
+/*	background-image: url("../images/hexagon.svg");
+	background-size: 100%;
+	background-repeat: no-repeat;*/
+}
+.skillhexagon svg {
+	width: 100%;
+	height: 100%;
+	transition:1s;
+	margin-top: 2em ;
+	margin-bottom: 2em;
+}
+.skillhexagon svg polygon {
+	
+	transition: fill 1s ease;
+}
+.skillhexpause {
+	font-size: 2em;
+	font-family: 'Montserrat', sans-serif;
+	display: block;
+	width: 7em;
+	text-align: center;
+	
+	padding: 1em;
+	color: white;
+	/*background-color:black;*/
+	background-image: url("../images/button.png");
+	/*background-position: 0% 15%;*/
+	background-size: 100% ;
+	transition:1s;
+}
+main {
+	
+	
+
+}
+.portfolio {
+	clear: both;
+}
+.portfolio>section {
+	  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+	position: relative;
+	float: left;
+	width: 50%;
+	background-image: url("../images/hexagon2.svg");
+	background-size: 40px ;
+	transition:1s;
+	border: 3px solid rgb(59, 59, 60);
+}
+.portfolio>section:nth-of-type(2n){
+	float: right;
+}
+.portfolio>section:nth-of-type(1),section section:nth-of-type(4){
+	background-color: #B8AD95;	
+}
+.portfolio> section:nth-of-type(2),section section:nth-of-type(5){
+	background-color: #595660;	
+}
+.portfolio> section:nth-of-type(3), section section:nth-of-type(6){
+	background-color: rgb(100, 51, 51);	
+}
+.portfolio> section img {
+	width: 90%;
+	margin: 5% 5% 0 5% ;
+}
+.portfolio section > h2 {
+	position: absolute;
+	top: 25%;
+	left: 10%;
+	
+	padding: 1.5em;
+	background-image: url("../images/hexagon2.svg");
+	background-position: 0% 15%;
+	background-size: 4em ;
+	background-color: rgb(28, 65, 123);
+	opacity: 0.9;
+	color: rgb(255,255,255);
+	width: 70%;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+}
+.portfolio .growsection {
+	width: 100%;
+	
+}
+.portfolio article {
+	color: white;
+	background-color: #2b3339;
+	font-size: 1.5em;
+	width: 100%;
+	
+	
+
+}
+.portfolio article div {
+
+	max-width: 35em;
+	margin: 0 auto;
+
+}
+.portfolio article h2 {
+	font-size: 1.4em;
+	text-align: center;
+}
+.portfolio article a{
+	/*margin: 1em;*/
+	color: #3dbc91;
+}
+.portfolio article div {
+	padding: 1em;
+}
+.aboutme {
+	background-color: #2b3339;
+	
+	clear: both;
+	max-height: 500px;
+    transition: max-height 1s ease-in;
+}
+.aboutme header {
+	clear: both;
+}
+.aboutme article {
+	width: 35em;
+	margin: 0 auto;
+	padding-bottom: 1em;
+}
+.aboutme article p {
+	color: rgb(216,216,216);
+	font-size: 1.5em;
+}
+
+
+footer p {
+	text-align: center;
+	font-size: 1.7em;
+	font-family: 'Montserrat', sans-serif;
+	padding: 1em;
+}
+footer a {
+	color: #3dbc91;
+}
+.skillcollapse {	
+	max-height: 0;
+    transition: max-height 1s ease-out;
+    overflow: hidden;
+}
+.hidden {
+	display: none;
+}
+@media (max-width: 1400px) {
+
+	 .portfolio>section {
+	 	width: 50%;
+	 }
+}
+@media (max-width: 900px) {
+	.backgroundspace {
+		-webkit-animation-name: none;
+	}
+	 .portfolio>section {
+	 	width: 100%;
+	 }
+}
+@media (max-width: 600px) {
+	.portfolio>section {
+	 	width: 100%;
+	 }
+	 .aboutme article {
+	 	width: 90%;
+	 }
+	 footer p {
+	 	font-size: 1em;
+	 }
+	 header section {
+	 	
+	 	left:5%;
+	 }
+	 header h1 {
+	 	font-size: 3em;
+	 	margin: 0;
+	 }
+	 header section h2 {
+	 	font-size: 2em;
+	 }
+	 .backgroundspace {
+	 	height: 400px;
+	 }
+}

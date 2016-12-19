@@ -1,0 +1,586 @@
+@-webkit-keyframes animatedBackground {
+	from {
+		background-position: 0 0;
+	}
+	to { 
+		background-position: 100% 0;
+	}
+}
+@-moz-keyframes animatedBackground {
+	from {
+		background-position: 0 0;
+	}
+	to { 
+		background-position: 100% 0;
+	}
+}
+@keyframes animatedBackground {
+	from {
+		background-position: 0 0;
+	}
+	to { 
+		background-position: 100% 0;
+	}
+}
+.backgroundspace {
+	width: 100%; 
+	height: 800px; 
+	background-image: url("../images/space3.jpg");
+	background-position: 0px 0px;
+	background-repeat: repeat-x;
+	transition:1s;
+    -webkit-animation-name: animatedBackground;
+    -moz-animation-name: animatedBackground;
+    animation-name: animatedBackground;
+	-webkit-animation-duration: 50s;
+	-moz-animation-duration: 50s;
+	animation-duration: 50s;
+	-webkit-animation-timing-function: linear;
+	-moz-animation-timing-function: linear;
+	-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	-animation-iteration-count: infinite;
+}
+.about .backgroundspace {
+	height: 300px;
+}
+#topheader , #bottemheader {	
+	position: absolute;
+    height: 349px;
+    width: 500%;
+    background-repeat: no-repeat;
+}
+#topheader {
+	background-image: url("../images/backgroundheaderwall.png");
+ 	top: 0;
+}
+#bottemheader {
+	background-image: url("../images/backgroundbottemwall.png");
+}
+header {
+	overflow: hidden;
+	position: relative;
+}
+body {
+/*	background-image: url("../images/hexagon2.svg");
+	background-size: 50px ;
+	background-color: #746D6D;	*/
+	margin: 0;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	max-width: 2560px;
+}
+body>section {
+	
+}
+header h1, h2{
+	font-family: "Helvetica Neue" ,Helvetica,Ariel,sans-serif;
+	font-weight: normal;
+	font-size: 2.6em;
+}
+header section {
+	position: absolute;
+	
+	left: 45%;
+	top: 40%;
+}
+header h1 {
+	
+	color: rgb(255,255,255);
+	
+	font-family: 'Montserrat', sans-serif;
+	font-size: 4em;
+	margin:0 auto;
+	margin-left: -3.6em;
+	text-transform: uppercase;
+
+}
+
+ header section h2 {
+	
+	display: block;
+	
+	font-size: 2.5em;
+	margin-top: 0;
+	margin-left: 2.2em;
+	
+	color: rgb(100, 51, 51);
+
+
+}
+section header,footer header {
+	/*background-image: url("../images/hexagon2.svg");*/
+	background-position: 0% 15%;
+	background-size: 8em ;
+	background-color: rgb(45, 45, 45);
+}
+section header h2,footer h2{
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	color: rgb(255,255,255);
+
+	background-image: url("../images/hexagon4.svg");
+	background-size: 10em ;
+	background-position: center;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+	padding: 1em;
+
+}
+
+.skills {
+	clear: both;
+	background-color: #2b3339;
+	max-height: 1000px;
+    transition: max-height 1s ease-in;
+	
+}
+.skills div {
+	
+}
+.skills div img{
+	width: 90%;
+	margin: 5%;
+}
+.skills div svg{
+
+}
+.skills section {
+	position: relative;
+}
+.skills section div p {
+	position: relative;
+	top: -50%;
+	margin: 0;
+	text-align: center;
+	font-size: 2em;
+	color: white;
+	text-shadow: 2px 2px 2px #000000;
+	/*margin-top: -0.75em;*/	
+
+}
+.skills section p:nth-of-type(1) {
+	/*margin-left: -43.5px;*/
+}
+.skills section p:nth-of-type(2) {
+	/*margin-left: -32.89px;*/
+}
+.skills section p:nth-of-type(3) {
+	/*margin-left: -72.02px;*/
+}
+.skills section p:nth-of-type(4) {
+	/*margin-left: -54.25px;*/
+}
+.skills section p:nth-of-type(5) {
+	/*margin-left: -49.797px;*/
+}
+.skills section p:nth-of-type(6) {
+	/*margin-left: -32.8985px;*/
+}
+.skillhexagon {
+	text-align: center;
+	position: relative;
+	
+	width: 16.66666%;
+	min-width: 10em;
+	margin: 0em auto;
+	float: left;
+	background-color: #2b3339;
+/*	background-image: url("../images/hexagon.svg");
+	background-size: 100%;
+	background-repeat: no-repeat;*/
+}
+.skillhexagon svg {
+	width: 90%;
+	margin: 5%;
+	height: 100%;
+	transition:1s;
+	margin-top: 2em ;
+	margin-bottom: 2em;
+}
+.skillhexagon svg polygon {
+	
+	transition: fill 2s ease;
+}
+.skillhexagon div {
+	width: 100%;
+	position: absolute;
+	top: 45%;
+
+	text-align: center;
+}
+.skillhexpause {
+	font-size: 2em;
+	font-family: 'Montserrat', sans-serif;
+	display: block;
+	width: 7em;
+	text-align: center;
+	
+	padding: 1em;
+	color: white;
+	/*background-color:black;*/
+	background-image: url("../images/button.png");
+	/*background-position: 0% 15%;*/
+	background-size: 100% ;
+	background-repeat: no-repeat;
+	transition:1s;
+}
+main {
+	background-image: url("../images/space3.jpg");
+	
+
+}
+#portfoliobody{
+	background-image: url("../images/hullbackground.png");
+}
+.portfolio {
+	clear: both;
+}
+.portfolio .img{
+	width: 95%;
+    background-color: rgba(8,19,240,0.5);
+
+    padding: 20px;
+
+	background:
+        -moz-linear-gradient(45deg,  transparent 10px,  rgba(8,19,240,0.5) 10px),
+        -moz-linear-gradient(135deg, transparent 10px,  rgba(8,19,240,0.5) 10px),
+        -moz-linear-gradient(225deg, transparent 10px,  rgba(8,19,240,0.5) 10px),
+        -moz-linear-gradient(315deg, transparent 10px,  rgba(8,19,240,0.5) 10px);
+    background:
+        -o-linear-gradient(45deg,  transparent 10px,  rgba(8,19,240,0.5) 10px),
+        -o-linear-gradient(135deg, transparent 10px,  rgba(8,19,240,0.5) 10px),
+        -o-linear-gradient(225deg, transparent 10px,  rgba(8,19,240,0.5) 10px),
+        -o-linear-gradient(315deg, transparent 10px, rgba(8,19,240,0.5) 10px);
+    background:
+        -webkit-linear-gradient(45deg,  transparent 10px,  rgba(43,51,57,0.5) 10px),
+        -webkit-linear-gradient(115deg, transparent 40px,  rgba(43,51,57,0.5) 10px),
+        -webkit-linear-gradient(225deg, transparent 10px,  rgba(43,51,57,0.5) 10px),
+        -webkit-linear-gradient(290deg, transparent 80px,  rgba(43,51,57,0.5) 10px);
+
+    background-position: 0% 99.6% , 99.7% 99.6%, 99.7% 0%, 0% 0%;
+    -moz-background-size: 50% 50%;
+    -webkit-background-size: 50% 50%;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    /*background-image: url("../images/plus.png");*/
+}
+.portfolio .imgholder {
+	float: left;
+	width: 40%;
+	margin: 3.4%;
+    background-color: rgba(8,19,240,0.5);
+    padding: 20px;
+
+	background:
+        -moz-linear-gradient(45deg,  transparent 10px,  rgba(8,19,240,0.5) 10px),
+        -moz-linear-gradient(135deg, transparent 10px,  rgba(8,19,240,0.5) 10px),
+        -moz-linear-gradient(225deg, transparent 10px,  rgba(8,19,240,0.5) 10px),
+        -moz-linear-gradient(315deg, transparent 10px,  rgba(8,19,240,0.5) 10px);
+    background:
+        -o-linear-gradient(45deg,  transparent 10px,  rgba(8,19,240,0.5) 10px),
+        -o-linear-gradient(135deg, transparent 10px,  rgba(8,19,240,0.5) 10px),
+        -o-linear-gradient(225deg, transparent 10px,  rgba(8,19,240,0.5) 10px),
+        -o-linear-gradient(315deg, transparent 10px, rgba(8,19,240,0.5) 10px);
+    background:
+        -webkit-linear-gradient(45deg,  transparent 10px,  rgba(0,0,0,0.5) 10px),
+        -webkit-linear-gradient(115deg, transparent 40px,  rgba(0,0,0,0.5) 10px),
+        -webkit-linear-gradient(225deg, transparent 10px,  rgba(0,0,0,0.5) 10px),
+        -webkit-linear-gradient(290deg, transparent 80px,  rgba(0,0,0,0.5) 10px);
+
+    background-position: 0% 99.6% , 99.7% 99.6%, 99.7% 0%, 0% 0%;
+    -moz-background-size: 50% 50%;
+    -webkit-background-size: 50% 50%;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+
+}
+.portfolio img{
+	width: 90%;
+    margin: 45px 0px 30px 30px;
+}
+.portfolio .expandicon {
+	width: 5%;
+}
+.portfolio .textholder {
+	float: right;
+	margin: 3.4%;
+		width: 40%;
+    background-color: rgba(8,19,240,0.5);
+    padding: 20px;
+
+	background:
+        -moz-linear-gradient(45deg,  transparent 10px,  rgba(8,19,240,0.5) 10px),
+        -moz-linear-gradient(135deg, transparent 10px,  rgba(8,19,240,0.5) 10px),
+        -moz-linear-gradient(225deg, transparent 10px,  rgba(8,19,240,0.5) 10px),
+        -moz-linear-gradient(315deg, transparent 10px,  rgba(8,19,240,0.5) 10px);
+    background:
+        -o-linear-gradient(45deg,  transparent 10px,  rgba(8,19,240,0.5) 10px),
+        -o-linear-gradient(135deg, transparent 10px,  rgba(8,19,240,0.5) 10px),
+        -o-linear-gradient(225deg, transparent 10px,  rgba(8,19,240,0.5) 10px),
+        -o-linear-gradient(315deg, transparent 10px, rgba(8,19,240,0.5) 10px);
+    background:
+        -webkit-linear-gradient(70deg,  transparent 40px,  rgba(0,0,0,0.5) 10px),
+        -webkit-linear-gradient(135deg, transparent 10px,  rgba(0,0,0,0.5) 10px),
+        -webkit-linear-gradient(250deg, transparent 80px,  rgba(0,0,0,0.5) 10px),
+        -webkit-linear-gradient(315deg, transparent 10px,  rgba(0,0,0,0.5) 10px);
+
+    background-position: 0% 99.6% , 99.7% 99.6%, 99.7% 0%, 0% 0%;
+    -moz-background-size: 50% 50%;
+    -webkit-background-size: 50% 50%;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+}
+.portfolio .projecttext {
+		width: 95%;
+    background-color: rgba(8,19,240,0.5);
+
+    padding: 20px;
+
+	background:
+        -moz-linear-gradient(45deg,  transparent 10px,  rgba(8,19,240,0.5) 10px),
+        -moz-linear-gradient(135deg, transparent 10px,  rgba(8,19,240,0.5) 10px),
+        -moz-linear-gradient(225deg, transparent 10px,  rgba(8,19,240,0.5) 10px),
+        -moz-linear-gradient(315deg, transparent 10px,  rgba(8,19,240,0.5) 10px);
+    background:
+        -o-linear-gradient(45deg,  transparent 10px,  rgba(8,19,240,0.5) 10px),
+        -o-linear-gradient(135deg, transparent 10px,  rgba(8,19,240,0.5) 10px),
+        -o-linear-gradient(225deg, transparent 10px,  rgba(8,19,240,0.5) 10px),
+        -o-linear-gradient(315deg, transparent 10px, rgba(8,19,240,0.5) 10px);
+    background:
+        -webkit-linear-gradient(70deg,  transparent 40px,  rgba(43,51,57,0.5) 10px),
+        -webkit-linear-gradient(135deg, transparent 10px,  rgba(43,51,57,0.5) 10px),
+        -webkit-linear-gradient(250deg, transparent 80px,  rgba(43,51,57,0.5) 10px),
+        -webkit-linear-gradient(315deg, transparent 10px,  rgba(43,51,57,0.5) 10px);
+
+    background-position: 0% 99.6% , 99.7% 99.6%, 99.7% 0%, 0% 0%;
+    -moz-background-size: 50% 50%;
+    -webkit-background-size: 50% 50%;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+}
+.portfolio section {
+	clear: both;
+	height: 660px;
+	  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+	position: relative;
+	transition:1s;
+	border: 3px solid rgb(59, 59, 60);
+}
+.projecttext div{
+	text-align: right;
+}
+/*.portfolio>section:nth-of-type(2n){
+	float: right;
+}
+.portfolio>section:nth-of-type(1),section section:nth-of-type(4){
+	background-color: rgba(184,173,149,0.3);	
+}
+.portfolio> section:nth-of-type(2),section section:nth-of-type(5){
+	background-color: rgba(89,86,96,0.3);	
+}
+.portfolio> section:nth-of-type(3), section section:nth-of-type(6){
+	background-color: rgba(100, 51, 51,0.3);	
+}
+.portfolio> section img {
+	width: 90%;
+	margin: 5% 5% 0 5% ;
+}
+.portfolio>section img:first-of-type {
+	position: absolute;
+	width: 5%;
+	right: 1%;
+	top: 1%;
+	margin:0 ;
+}
+.portfolio section > h2 {
+	position: absolute;
+	top: 25%;
+	left: 15%;
+	
+	padding: 1.5em 0;
+	background-image: url("../images/hexagon5.svg");
+	/*background-position: 0% 15%;*/
+	background-size: 12em ;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: rgb(99, 50, 50);
+	opacity: 0.9;
+	color: rgb(255,255,255);
+	text-shadow: 2px 2px 2px rgb(0,0,0);
+	width: 70%;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+}*/
+.portfolio .growsection {
+	width: 100%;
+	
+}
+.portfolio article {
+	color: white;
+	background-color: #2b3339;
+	font-size: 1.2em;
+	width: 100%;
+	
+	
+
+}
+.portfolio article div {
+
+	max-width: 35em;
+	margin: 0 auto;
+
+}
+.portfolio article h2 {
+	font-size: 1.4em;
+	text-align: center;
+}
+.portfolio article a{
+	/*margin: 1em;*/
+	color: #3dbc91;
+}
+.portfolio article div {
+	padding: 1em;
+}
+.aboutme {
+	background-color: #2b3339;
+	
+	clear: both;
+	max-height: 700px;
+    transition: max-height 1s ease-in;
+}
+.aboutme header {
+	clear: both;
+}
+.aboutme article {
+	width: 35em;
+	margin: 0 auto;
+	padding-bottom: 1em;
+}
+.aboutme article p {
+	color: rgb(216,216,216);
+	font-size: 1.5em;
+}
+
+
+footer p {
+	text-align: center;
+	font-size: 1.7em;
+	font-family: 'Montserrat', sans-serif;
+	padding: 1em;
+	color: white;
+}
+footer a {
+	color: #3dbc91;
+}
+.skillcollapse {	
+	max-height: 0;
+    transition: max-height 1s ease-out;
+    overflow: hidden;
+}
+.hidden {
+	display: none;
+}
+@media (max-width: 1440px) {
+
+	.portfolio>section {
+	 	width: 50%;
+	 }
+	.skillhexagon {
+		width: 33.3333333%;
+
+	}
+	.skillhexagon svg {
+		width: 60%;
+		margin: 0 20%;
+	}
+	.portfolio section > h2 {
+		top: 10%;
+		font-size: 1.7em;
+	}
+	section header h2,footer h2,.skills section div p{
+		font-size: 1.7em;
+	}
+	.aboutme article p,.portfolio article {
+		font-size: 1.2em;
+	}
+}
+@media (max-width: 900px) {
+	.backgroundspace {
+		-webkit-animation-name: none;
+	}
+	.portfolio>section {
+	 	width: 100%;
+	 }
+	.skillhexagon svg {
+		width: 80%;
+		margin: 0 10%;
+	}
+	.portfolio section > h2 {
+		top: 15%;
+
+	}
+}
+@media (max-width: 750px) {
+	.skillhexagon svg {
+		width: 90%;
+		margin: 0 5%;
+	}
+	.portfolio section > h2 {
+		top: 10%;
+	}
+
+}
+@media (max-width: 600px) {
+	.portfolio>section {
+	 	width: 100%;
+	 }
+	 .aboutme article {
+	 	width: 90%;
+	 }
+	.skillhexagon div {
+ 		top: 40%;
+	}
+	 footer p {
+	 	font-size: 1em;
+	 }
+	 header section {
+	 	
+	 	left:5%;
+	 }
+	 header h1 {
+	 	font-size: 3em;
+	 	margin: 0;
+	 }
+	 header section h2 {
+	 	font-size: 2em;
+	 }
+	 .backgroundspace {
+	 	height: 400px;
+	 }
+	 section header h2,footer h2,.skills section div p{
+		font-size: 1.5em;
+	}
+	.aboutme article p,.portfolio article {
+		font-size: 1.2em;
+	}
+}
+@media (max-width: 500px) {
+	.skillhexagon {
+		width: 50%;		
+	}
+	.aboutme {
+		max-height: 1000px;  
+	}
+}
+@media (max-width: 400px) {
+	section header h2,footer h2,.skills section div p{
+		font-size: 1.2em;
+	}
+	.aboutme article p,.portfolio article {
+		font-size: 1em;
+	}
+}
