@@ -1,162 +1,153 @@
-function positionBottem () {
-	var clientWidth = document.body.clientWidth,
-		headerHeight = document.getElementById("nameheader").clientHeight,
-		imageWidth=2200,
-		imageHeight=349,
-		bottemHeader=document.getElementById("bottemheader"),
-		heightdifference=headerHeight-imageHeight,
-		positionDifference=clientWidth-imageWidth;
-		//nameHeader=document.getElementById("nameheader");
+var htmlElements = {
+    body: document.querySelector('body'),
+    header: document.querySelector('header'),
+    content : document.querySelectorAll('#portfoliobody > section'),
+    main: document.querySelector('main')
 
-	bottemHeader.style.top="" + heightdifference + "px";
-	bottemHeader.style.left="" + positionDifference + "px";
-	bottemHeader.style.width=""
+
+};
+
+var app = {
+    init: function() {
+        // app.checkView();
+        // routes.init();
+        this.createContentId();
+        lines.init();
+        // view.slider();
+        
+    },
+    createContentId : function() {
+    	for (var i = 0; i < htmlElements.content.length; i++) {
+    		var num = i+1;
+    		htmlElements.content[i].id = "content" + num;
+    	};
+    }
+};
+
+var routes = {
+    init: function() {
+        routie('', function() {
+            // pages.displayPage('cardboardmovie',false);
+
+            // cardToIconstl.play();
+
+            
+        });
+        
+
+    }
+}
+var lines = {
+
+	linePositionRight: {
+		line1:window.innerWidth-(window.innerWidth/20),
+		line2:400,
+		line3:200,
+		line4:200,
+		line5:200,
+		line6:200,
+		line7:200,
+		line8:200,
+		line9:200,
+		line10:200
+	},
+	linePosition: {
+		line1:0
+
+	},
+	createLines : function(numberoflines) {
+		for (var i = 0; i < numberoflines; i++) {
+			var x = i+1;
+			lines.createLine(x);
+		};
+	},
+	createLine : function(x) {
+		var heightOffset = 20;
+		var horOffset = 40;
+		var x = x;
+		var div = document.createElement("DIV");//create line element
+
+		var divHor = document.createElement("DIV");
+		
+		var currentLineStart = lines.linePosition["line"+x];//read start point
+		var height = lines.lineHeight(x)+heightOffset; // ask how long
+
+		var nextNumber = Number(x)+1; // what number is next content block
+		var newPos = "line"+nextNumber; //create next content string //-lines.linePositionRight["line"+x]
+		var lineHeight = height - currentLineStart;
+		var width = window.innerWidth-lines.lineRightPos(x);
+		var horLineRightStart = htmlElements.main.clientWidth-lines.linePositionRight["line"+x] + "px";
+
+		if (lines.linePositionRight["line"+x]<lines.lineRightPos(x)+horOffset) {
+			var t = lines.lineRightPos(x)+horOffset;
+			horLineRightStart = htmlElements.main.clientWidth - t + "px";
+		};
+
+		div.classList.add("verline");
+		// div.id="line"+x;
+		div.style.top = lines.linePosition["line"+x]+"px";
+		div.style.height = lineHeight+"px";
+		div.style.left = lines.linePositionRight["line"+x] + "px";
+
+		divHor.classList.add("horline");
+		// divHor.id="line"+x;
+		divHor.style.top = height+"px";
+		divHor.style.width = width+"px";
+		divHor.style.right =  horLineRightStart;
+
+		lines.linePosition[newPos] = height;
+		lines.linePositionRight[newPos] = lines.lineRightPos(x)+horOffset;
+		
+		document.body.appendChild(div);
+		document.body.appendChild(divHor); 
+	},
+	lineRightPos : function(contentId){
+		var content = document.querySelector('#content'+ contentId +' article h2').getBoundingClientRect();
+		var right = content.right;
+
+		return right;
+	},
+	lineHeight : function(contentId) {
+		var content = document.querySelector('#content'+ contentId +' article').getBoundingClientRect();
+		var height = content.top+window.scrollY;
+
+
+		return height;
+	},
+	resetLines : function () {
+		var verLines = document.querySelectorAll(".verline");
+		var horLines = document.querySelectorAll(".horline");
+
+		lines.removeElement(verLines);
+		lines.removeElement(horLines);
+		lines.linePositionRight.line1 = window.innerWidth-(window.innerWidth/20);
+
+		lines.createLines(htmlElements.content.length);
+	},
+	removeElement: function (elements) {
+		for (var i = 0; i < elements.length; i++) {
+			elements[i].parentNode.removeChild(elements[i]);
+		};
+	},
+	
+	init : function() {
+		// window.onload = function(e) {
+			window.addEventListener('resize', function(event){
+			  lines.resetLines();
+			});
+			lines.createLines(htmlElements.content.length);
+		// }
+			
+		
+	}
 }
 
-positionBottem();
 
-//mouse animate
-	// var nameHeader = document.querySelector('header section');
-	// var header = document.querySelector('header');
-	// var allSectionImg = document.querySelectorAll('.portfolio section');
-	// var allSectionArticle = document.querySelectorAll('section section > h2');
+app.init()
 
-	// var nameSpaceOut = function() {
-	// 	nameHeader.classList.remove("bounceInLeft");
-	// 	nameHeader.classList.add("bounceOutRight");
-	// 	setTimeout(function(){ 
-	// 		nameHeader.classList.remove("bounceOutRight");
-	// 		nameHeader.classList.add("bounceInLeft");		 
-	// 	}, 3000);
-	// }
-	// var nameSpaceIn = function() {
 
-	// }
-	// var titelHover = function(section){
-	// 	if (colapseSkillsBool==false) {
-	// 		allSectionArticle[section].classList.remove("fadeOutDown");
-	// 		allSectionArticle[section].classList.add("fadeInDown");
-	// 	};
-	// }
-	// var titelRemove = function(section){
-	// 	if (colapseSkillsBool==false) {
-	// 		allSectionArticle[section].classList.remove("fadeInDown");
-	// 		allSectionArticle[section].classList.add("fadeOutDown");
-	// 	};
-	// }
 
-	// allSectionImg[0].addEventListener("mouseover", function() { titelHover(0); });
-	// allSectionImg[1].addEventListener("mouseover", function() { titelHover(1); });
-	// allSectionImg[2].addEventListener("mouseover", function() { titelHover(2); });
-	// allSectionImg[3].addEventListener("mouseover", function() { titelHover(3); });
-	// allSectionImg[4].addEventListener("mouseover", function() { titelHover(4); });
-	// allSectionImg[5].addEventListener("mouseover", function() { titelHover(5); });
 
-	// allSectionImg[0].addEventListener("mouseout", function() { titelRemove(0); });
-	// allSectionImg[1].addEventListener("mouseleave", function() { titelRemove(1); });
-	// allSectionImg[2].addEventListener("mouseleave", function() { titelRemove(2); });
-	// allSectionImg[3].addEventListener("mouseleave", function() { titelRemove(3); });
-	// allSectionImg[4].addEventListener("mouseleave", function() { titelRemove(4); });
-	// allSectionImg[5].addEventListener("mouseleave", function() { titelRemove(5); });
 
-	// nameHeader.addEventListener("mouseover", function() { nameSpaceOut(); });
-	// header.addEventListener("mouseleave", function() { nameSpaceIn(); });
-//skills 
-	// var allSkills = document.querySelectorAll('.skills section p');
-	// var skillHexImg = document.querySelectorAll('.skillhexagon svg');
-	// var skillHexImgPoly = document.querySelectorAll('.skillhexagon svg polygon');  
-	// var skillHexPause = document.querySelector('.skillhexpause');
-	// var skillInterval=setInterval(function () {skillsHexagon()}, 3500);
 
-	// var whichSkill=0;
-	// var rotateSkill= 0;
-	// var color=[ "9D9A9B", "1A1F0F", "9F9D9F","262E38","6F6B65","776E69"];
-	// 
 
-	// var skillsHexagon = function() {
-	// 	var shifted = color.shift();
-	// 	color.push(shifted);
-		// if (whichSkill>skillHexImgPoly.length - 1) {
-		// 	whichSkill=0;
-		// 	color=[595660, "B8AD95", 643333,"1C417B","3B3B3C","3dbc91"];
-
-		// }  
-		// for (var i = skillHexImgPoly.length - 1; i >= 0; i--) {
-		// 	skillHexImgPoly[i].style.fill="#"+color[i]//"rgb("+color[0]+","+color[1]+","+color[2]+")";
-		// 	// allSkills[i].classList.add("hidden")
-		// };
-		//console.log(shifted)
-		// allSkills[whichSkill].classList.remove("hidden");
-		//skillHexImg.style.transform="rotate("+rotateSkill+"deg)";
-		
-		
-		
-		
-	//}
-	// var pauseBool=false;
-	// var pause = function () {
-	// 	if (pauseBool==false) {
-	// 		clearInterval(skillInterval);
-			
-	// 		skillHexPause.innerHTML = "Unpause"
-	// 		pauseBool=true;
-	// 	} 
-	// 	else if (pauseBool==true) {
-	// 		skillsHexagon();
-	// 		skillInterval=setInterval(function () {skillsHexagon()}, 1500);
-	// 		skillHexPause.innerHTML = "Pause"
-	// 		pauseBool=false;
-	// 	};
-	// }
-
-	// skillHexPause.addEventListener("click",function(){pause();});
-	// skillsHexagon();
-
-//expand portfolio section
-// var skillSection = document.querySelector('.skills');
-// var portSectionButton = document.querySelectorAll('.portfolio section > h2');
-// var sectionArticle = document.querySelectorAll('.portfolio section article');
-// var aboutMeSection = document.querySelector('.aboutme');
-// var headerTitle = document.querySelector('.portfolio header h2');
-// var expandIcon = document.querySelectorAll(".portfolio section img:nth-of-type(1)");
-
-// var backgroundSpace = document.querySelector('.backgroundspace');
-
-// allSectionImg[0].addEventListener("click",function(){colapseSkills(0,"Concerto Webshop");});
-// allSectionImg[1].addEventListener("click",function(){colapseSkills(1,"Steen, papier, schaar multiplayer");});
-// allSectionImg[2].addEventListener("click",function(){colapseSkills(2,"Mijn ontmantel installatie");});
-// allSectionImg[3].addEventListener("click",function(){colapseSkills(3,"CMD huistijl website");});
-// allSectionImg[4].addEventListener("click",function(){colapseSkills(4,"Space Chase javascript game");});
-// allSectionImg[5].addEventListener("click",function(){colapseSkills(5,"De Rijk Computerhulp");});
-
-// var colapseSkillsBool= false;
-// var colapseSkills = function(section,title) {
-// 	if (colapseSkillsBool==false) {
-// 		for (var i = allSectionImg.length - 1; i >= 0; i--) {
-// 			allSectionImg[i].classList.add("hidden")
-// 		};
-// 		expandIcon[section].src="images/close.svg";
-// 		allSectionImg[section].classList.remove("hidden");
-// 		allSectionImg[section].classList.add("growsection");
-// 		skillSection.classList.add("skillcollapse");
-// 		aboutMeSection.classList.add("skillcollapse");
-// 		backgroundSpace.style.height="350px";
-// 		sectionArticle[section].classList.remove("hidden");
-// 		allSectionArticle[section].classList.remove("fadeInDown");
-// 		allSectionArticle[section].classList.add("fadeOutDown");
-// 		headerTitle.innerHTML = title;
-// 		colapseSkillsBool=true;
-// 	} else if (colapseSkillsBool==true) {
-// 		for (var i = allSectionImg.length - 1; i >= 0; i--) {
-// 			allSectionImg[i].classList.remove("hidden")
-// 		};
-// 		allSectionImg[section].classList.remove("growsection");
-// 		skillSection.classList.remove("skillcollapse");
-// 		expandIcon[section].src="images/expand.svg";
-// 		aboutMeSection.classList.remove("skillcollapse");
-// 		sectionArticle[section].classList.add("hidden");
-// 		backgroundSpace.style.height="800px";
-// 		headerTitle.innerHTML = "Portfolio";
-// 		colapseSkillsBool=false;
-// 	};
-// }
