@@ -14,7 +14,7 @@ var app = {
         this.createContentId();
         lines.init();
         // view.slider();
-        
+
     },
     createContentId : function() {
     	for (var i = 0; i < htmlElements.content.length; i++) {
@@ -31,12 +31,20 @@ var routes = {
 
             // cardToIconstl.play();
 
-            
+
         });
-        
+
 
     }
 }
+
+var svgStuff = {
+  createRect : function() {
+    var draw = SVG('drawing').size(300, 300)
+    var rect = draw.rect(100, 100).attr({fill: "#a0a0a0"})
+  }
+}
+
 var lines = {
 
 	linePositionRight: {
@@ -68,7 +76,7 @@ var lines = {
 		var div = document.createElement("DIV");//create line element
 
 		var divHor = document.createElement("DIV");
-		
+
 		var currentLineStart = lines.linePosition["line"+x];//read start point
 		var height = lines.lineHeight(x)+heightOffset; // ask how long
 
@@ -97,9 +105,9 @@ var lines = {
 
 		lines.linePosition[newPos] = height;
 		lines.linePositionRight[newPos] = lines.lineRightPos(x)+horOffset;
-		
+
 		document.body.appendChild(div);
-		document.body.appendChild(divHor); 
+		document.body.appendChild(divHor);
 	},
 	lineRightPos : function(contentId){
 		var content = document.querySelector('#content'+ contentId +' article h2').getBoundingClientRect();
@@ -129,7 +137,7 @@ var lines = {
 			elements[i].parentNode.removeChild(elements[i]);
 		};
 	},
-	
+
 	init : function() {
 		// window.onload = function(e) {
 			window.addEventListener('resize', function(event){
@@ -137,17 +145,10 @@ var lines = {
 			});
 			lines.createLines(htmlElements.content.length);
 		// }
-			
-		
+
+
 	}
 }
 
 
 app.init()
-
-
-
-
-
-
-
