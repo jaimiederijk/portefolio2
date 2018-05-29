@@ -2,8 +2,8 @@ var htmlElements = {
     body: document.querySelector('body'),
     header: document.querySelector('header'),
     content : document.querySelectorAll('#portfoliobody > section'),
-    main: document.querySelector('main')
-
+    main: document.querySelector('main'),
+    testbackground: document.querySelector('#test')
 
 };
 
@@ -11,9 +11,10 @@ var app = {
     init: function() {
         // app.checkView();
         // routes.init();
-        this.createContentId();
-        lines.init();
+        //this.createContentId();
+        //lines.init();
         // view.slider();
+        svgStuff.createRect();
 
     },
     createContentId : function() {
@@ -40,8 +41,37 @@ var routes = {
 
 var svgStuff = {
   createRect : function() {
-    var draw = SVG('drawing').size(300, 300)
-    var rect = draw.rect(100, 100).attr({fill: "#a0a0a0"})
+    var bodyWidth = htmlElements.body.offsetWidth;
+    var rect = {};
+    var rectFill = {};
+    var rectHor = {};
+    var rectHorFill = {};
+    var draw = SVG(htmlElements.testbackground).size(bodyWidth, 1000)
+    var numberOfBars = 7;
+    var yo = bodyWidth/numberOfBars
+    //var xArray = [-100,-100,-100,-100,-100,-100]
+    //var yArray = [100, 300, 450, 700, -150, 1100]
+
+
+    for (var i = 0; i < numberOfBars; i++) {
+
+      rect[i] = draw.rect(bodyWidth+500, 50).move(-100, i*yo).rotate(i*5).attr({fill: "#a0a0a0"})
+      rectHor[i] = draw.rect(50, bodyWidth+500).move(i*yo, -100).rotate(i*5).attr({fill: "#a0a0a0"})
+    }
+    // seperated for so these ar all on top
+    for (var b = 0; b < numberOfBars; b++) {
+      rectFill[b] = draw.rect(bodyWidth+500, 44).move(-100, b*yo+1).rotate(b*5).attr({fill: "#fff"})
+      rectHorFill[b] = draw.rect(44 ,bodyWidth+500).move(b*yo+5, -100).rotate(b*5).attr({fill: "#fff"})
+      //rect[b].animate(4000).rotate(360).loop()
+      rectFill[b].animate(2000).move(-100, b*yo+5).loop()
+      rectHorFill[b].animate(2000).move(b*yo+1, -100).loop()
+    }
+
+    //draw.animate().rotate(45).loop()
+  //  var rect = draw.rect(bodyWidth, 50).move(0, 100).attr({fill: "#a0a0a0"})
+    //var rect2 = draw.rect(bodyWidth, 50).move(0, 100).rotate(45).attr({fill: "#a0a0a0"})
+  //  var rectfill2 = draw.rect(bodyWidth, 44).move(0, 103).attr({fill: "#fff"})
+//    var rectfill = draw.rect(bodyWidth, 44).move(0, 103).rotate(45).attr({fill: "#fff"})
   }
 }
 

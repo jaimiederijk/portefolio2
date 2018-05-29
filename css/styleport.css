@@ -55,6 +55,7 @@
 
 		left: 45%;
 		top: 40%;
+
 	}
 
 	header h1 {
@@ -89,7 +90,7 @@
 	* {
 		margin: 0;
 		font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-
+		font-weight: 600;
 	}
 	a {
 		color: #fffe6c;
@@ -199,7 +200,7 @@
 		max-width: 35em;
 		/*margin: 1rem;*/
 		padding: 1rem;
-		color: white;
+		color: #525252;
 
 	}
 	#portfoliobody .projecttext h2 {
@@ -210,12 +211,14 @@
 	}
 	#portfoliobody > section {
 		/*clear: both;*/
+		/* background-color: white; */
 		padding-top: 1rem;
 		margin-bottom: 3rem;
+		margin-left: 10rem;
 	}
 	#portfoliobody .projecttext, #portfoliobody .imgholder, .textholder h2 {
-		background-color: rgb(35, 50, 60);
-		border: #a0a0a0 solid 1px;
+		background-color: rgb(255, 255, 255);
+		border: #a0a0a0 solid 5px;
 	}
 	.textholder h2 {
 		display: inline-block;
@@ -223,7 +226,7 @@
 
 	    max-width: 35em;
 	    margin-bottom: 1rem;
-	    color: #fefefe;
+	    color: #bdbdbd;
 	}
 	#content1 {
 		margin-left: 20%;
@@ -372,6 +375,13 @@
 		background-repeat: repeat;
 	}
 }
+
+#test {
+	height: 50rem;
+	width: 100%;
+	background-color: white;
+}
+
 @media (max-width: 800px) {
 	h2 {
 		font-size: 1.7em;
